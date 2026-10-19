@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#dff2ff">
+  <meta name="description" content="KAVISCAPE — Music for every mind. We’re exploring new ways for people to experience, learn, practise and perform music.">
+  <title>KAVISCAPE™ — Music for Every Mind</title>
+  <style>
+    :root { --bg:#dff2ff; --gold:#85520a; --gold-light:#704000; --text:#071d33; --muted:#24445d; --line:rgba(7,49,82,.28); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; background:var(--bg); scroll-padding-top:100px; }
+    body {
+      margin:0; min-height:100vh; color:var(--text); background:
+      radial-gradient(ellipse at 50% 34%, rgba(255,255,255,.9) 0%, rgba(223,242,255,0) 55%),var(--bg);
+      font-family:Inter,"Segoe UI",Arial,sans-serif; overflow-x:hidden; color:#071d33;
+    }
+    body::before,body::after { content:""; position:fixed; pointer-events:none; z-index:0; width:70vw;height:70vw;max-width:900px;max-height:900px;border:1px solid rgba(33,104,151,.09);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%); }
+    body::after { width:54vw;height:54vw;max-width:700px;max-height:700px; }
+    header,main,section,footer { position:relative;z-index:1; }
+    header { position:sticky;top:0;z-index:5;backdrop-filter:blur(12px);background:rgba(223,242,255,.92);width:100%;padding:24px clamp(22px,6vw,88px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(33,104,151,.16);gap:20px; }
+    .brand { color:var(--text);text-decoration:none;font-size:19px;font-weight:650;letter-spacing:.19em;white-space:nowrap; }
+    .brand sup { color:var(--gold);font-size:9px;letter-spacing:0;margin-left:2px; }
+    nav { display:flex;align-items:center;gap:clamp(16px,3vw,38px); }
+    nav a { color:#102f49;text-decoration:none;font-size:12px;font-weight:750;letter-spacing:.12em;transition:color .2s; }
+    nav a:hover { color:var(--gold-light); }
+    nav .nav-contact { color:var(--gold-light);border:1px solid rgba(201,169,106,.55);padding:10px 14px; }
+    main { display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:88px 24px 100px;min-height:calc(100vh - 150px); }
+    .eyebrow { display:flex;align-items:center;gap:14px;color:var(--gold);font-size:11px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;margin-bottom:30px; }
+    .eyebrow::before,.eyebrow::after { content:"";display:block;width:35px;height:1px;background:var(--gold);opacity:.7; }
+    h1 { font-weight:750;font-size:clamp(38px,6.2vw,76px);line-height:1.12;letter-spacing:-.04em;color:#071d33;max-width:900px;margin:0 auto 24px; }
+    h1 span { color:var(--gold-light);font-family:Georgia,"Times New Roman",serif;font-style:italic; }
+    .description { max-width:590px;color:#24445d;font-size:clamp(15px,1.5vw,18px);font-weight:450;line-height:1.85;font-weight:300;margin:0 auto; }
+    .wave-wrap { width:min(510px,80vw);height:74px;margin:42px auto 33px;display:flex;align-items:center;justify-content:center;gap:5px;opacity:.9; }
+    .wave-wrap span { display:block;width:2px;border-radius:3px;height:var(--h);background:linear-gradient(to bottom,rgba(154,107,34,.35),var(--gold),rgba(154,107,34,.35)); }
+    .coming { color:var(--gold-light);font-size:11px;letter-spacing:.48em;text-transform:uppercase;margin-top:0; }
+    .subline { margin-top:18px;color:#24445d;font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:17px;font-weight:600; }
+    .contact-link { margin-top:35px;color:var(--text);text-decoration:none;font-size:12px;letter-spacing:.1em;padding-bottom:8px;border-bottom:1px solid var(--gold);transition:color .2s ease; }
+    .contact-link span { color:var(--gold);margin-left:8px; }
+    .contact-link:hover { color:var(--gold-light); }
+    .content-section { max-width:1000px;margin:0 auto;padding:95px 28px 105px;text-align:center;border-top:1px solid rgba(33,104,151,.16); }
+    .section-kicker { color:var(--gold);font-size:11px;font-weight:800;letter-spacing:.28em;text-transform:uppercase;margin:0 0 22px; }
+    h2 { font-size:clamp(30px,4vw,48px);font-weight:750;letter-spacing:-.025em;margin:0 auto 25px;color:#071d33; }
+    h2 span { color:var(--gold-light);font-family:Georgia,"Times New Roman",serif;font-style:italic; }
+    .section-copy { max-width:720px;margin:0 auto;color:#24445d;font-size:16px;line-height:1.85;font-weight:450; }
+    .pillars { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:42px auto 0;max-width:850px;text-align:left; }
+    .pillar { border:1px solid var(--line);padding:24px 22px;background:rgba(255,255,255,.62); }
+    .pillar-number { color:var(--gold);font-size:10px;letter-spacing:.18em; }
+    .pillar h3 { font-weight:450;font-size:17px;margin:15px 0 10px; }
+    .pillar p { color:#29485f;font-size:14px;line-height:1.8;font-weight:450;margin:0; }
+    .contact-panel { max-width:760px;margin:0 auto;border:1px solid var(--line);padding:clamp(28px,5vw,54px);background:rgba(255,255,255,.72); }
+    footer { padding:23px clamp(24px,6vw,88px);display:flex;justify-content:space-between;align-items:center;gap:16px;border-top:1px solid rgba(33,104,151,.16);color:#29485f;font-size:11px;letter-spacing:.08em;font-weight:600; }
+    .footer-tag { color:#704000;letter-spacing:.2em;text-transform:uppercase;font-weight:750; }
+    @media(max-width:650px) {
+      header { padding-top:19px;padding-bottom:19px;align-items:flex-start;flex-direction:column;gap:17px; }
+      nav { width:100%;justify-content:space-between;gap:12px; }
+      nav a { font-size:10px;letter-spacing:.06em; }
+      nav .nav-contact { padding:8px 10px; }
+      main { min-height:650px;padding-top:65px;padding-bottom:75px; }
+      .eyebrow { letter-spacing:.22em;gap:9px; }
+      .eyebrow::before,.eyebrow::after { width:22px; }
+      .wave-wrap { margin-top:32px;margin-bottom:27px; }
+      .content-section { padding:72px 22px 78px; }
+      .pillars { grid-template-columns:1fr;max-width:420px; }
+      footer { flex-direction:column;text-align:center; }
+    }
+    @media(prefers-reduced-motion:reduce) { html{scroll-behavior:auto} *{transition:none!important} }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="#home" aria-label="Kaviscape home">KAVISCAPE<sup>™</sup></a>
+    <nav aria-label="Main navigation">
+      <a href="#about">ABOUT US</a>
+      <a class="nav-contact" href="#contact">GET IN TOUCH</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <div class="eyebrow">Music for every mind</div>
+    <h1>Something serious<br>is <span>being built.</span></h1>
+    <p class="description">We’re exploring new ways for people to experience, learn, practise and perform music.</p>
+    <div class="wave-wrap" aria-hidden="true" id="wave"></div>
+    <div class="coming">Coming soon</div>
+    <div class="subline">The future of music experiences is taking shape.</div>
+    <a class="contact-link" href="#contact">Get in touch <span>→</span></a>
+  </main>
+
+  <section class="content-section" id="about" aria-labelledby="about-title">
+    <p class="section-kicker">About Kaviscape</p>
+    <h2 id="about-title">A new way to <span>experience music.</span></h2>
+    <p class="section-copy">
+      KAVISCAPE is an early-stage project exploring new possibilities for interactive music experiences.
+      Our vision is to bring listening, learning, practice and performance closer together through technology.
+      We are developing and validating the concept, with the goal of creating more personal, flexible
+      and creative ways for people to engage with music.
+    </p>
+    <div class="pillars">
+      <article class="pillar">
+        <div class="pillar-number">01 / EXPERIENCE</div>
+        <h3>Explore new possibilities</h3>
+        <p>We’re exploring new ways for people to connect with and experience music.</p>
+      </article>
+      <article class="pillar">
+        <div class="pillar-number">02 / LEARN & PRACTISE</div>
+        <h3>Make practice more personal</h3>
+        <p>We’re investigating how technology could support more flexible music-learning and practice experiences.</p>
+      </article>
+      <article class="pillar">
+        <div class="pillar-number">03 / CREATE & PERFORM</div>
+        <h3>Discover new ways to express yourself</h3>
+        <p>Our vision includes experiences that encourage musical creativity, participation and performance.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="content-section" id="contact" aria-labelledby="contact-title">
+    <div class="contact-panel">
+      <p class="section-kicker">Get in touch</p>
+      <h2 id="contact-title">Let’s start a <span>conversation.</span></h2>
+      <p class="section-copy">
+        Kaviscape is currently focused on product development and technical validation.
+        We look forward to sharing more about our progress as the project evolves.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div>© 2026 Kaviscape. All rights reserved.</div>
+    <div class="footer-tag">Music for every mind</div>
+  </footer>
+
+  <script>
+    const heights = [10,15,22,31,18,40,27,48,32,20,43,57,35,24,48,65,42,30,54,70,47,36,60,50,28,42,62,34,23,47,58,37,19,44,29,52,34,20,39,25,15,10];
+    const wave = document.getElementById('wave');
+    heights.forEach((height, i) => {
+      const bar = document.createElement('span');
+      bar.style.setProperty('--h', height + 'px');
+      bar.style.opacity = (0.38 + (1 - Math.abs(i - heights.length / 2) / (heights.length / 2)) * 0.62).toFixed(2);
+      wave.appendChild(bar);
+    });
+  </script>
+</body>
+</html>
